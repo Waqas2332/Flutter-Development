@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class GradientContainer extends StatelessWidget {
   // super() runs the constructor function of parent class
   // key is required by StatelessWidget class
+  // main purpose of constructor is to forward the key parameter to parent class
   const GradientContainer({super.key});
   // build method is required for custom widgets and it triggers by flutter whenever user interface is rendered
   // return type of build method is Widget
