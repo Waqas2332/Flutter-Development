@@ -13,6 +13,9 @@ void main() {
 }
 
 class GradientContainer extends StatelessWidget {
+  // super() runs the constructor function of parent class
+  // key is required by StatelessWidget class
+  const GradientContainer({super.key});
   // build method is required for custom widgets and it triggers by flutter whenever user interface is rendered
   // return type of build method is Widget
   @override
@@ -30,7 +33,7 @@ class GradientContainer extends StatelessWidget {
       ),
       child: const Center(
         child: Text(
-          "Implemented Custom Widgets",
+          "Hello World",
           style: TextStyle(color: Colors.white, fontSize: 28),
         ),
       ),
