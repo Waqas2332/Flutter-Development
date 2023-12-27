@@ -6,7 +6,7 @@ class StyledText extends StatelessWidget {
   @override
   build(context) {
     return const Text(
-      "Custom Text",
+      "Hello Laptop",
       style: TextStyle(color: Colors.white, fontSize: 28),
     );
   }
