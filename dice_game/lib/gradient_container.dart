@@ -2,7 +2,6 @@ import 'package:dice_game/styled_text.dart';
 import 'package:flutter/material.dart';
 
 class GradientContainer extends StatelessWidget {
-  
   // super runs the constructor function of parent class
   // key is required by StatelessWidget class
   // main purpose of constructor is to forward the key parameter to parent class
@@ -23,7 +22,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: StyledText(),
+        child: StyledText("Applied Variables"),
       ),
     );
   }
