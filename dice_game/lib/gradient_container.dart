@@ -9,6 +9,8 @@ class GradientContainer extends StatelessWidget {
   const GradientContainer(this.colors, {super.key});
   // build method is required for custom widgets and it triggers by flutter whenever user interface is rendered
   // return type of build method is Widget
+
+  void rollDice() {}
   @override
   Widget build(context) {
     return Container(
@@ -20,9 +22,14 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Image.asset(
-          "assets/dice-2.png",
-          width: 200,
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/dice-2.png",
+              width: 200,
+            ),
+            TextButton(onPressed: rollDice, child: const Text("Roll Dice"))
+          ],
         ),
       ),
     );
