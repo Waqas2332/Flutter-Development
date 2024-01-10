@@ -33,9 +33,13 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            OutlinedButton(
+            OutlinedButton.icon(
               onPressed: () {},
-              child: const Text(
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+              icon: const Icon(Icons.arrow_right_alt),
+              label: const Text(
                 "Start Quiz",
                 style: TextStyle(
                   color: Colors.white,
