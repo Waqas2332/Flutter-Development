@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home(this.onScreenSwitch, {super.key});
+
+  final void Function() onScreenSwitch;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +38,9 @@ class Home extends StatelessWidget {
               height: 40,
             ),
             OutlinedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                onScreenSwitch();
+              },
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.white,
               ),
