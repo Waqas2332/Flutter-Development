@@ -1,31 +1,25 @@
-import "dart:math";
+import 'package:dice_game/styled_text.dart';
 import 'package:flutter/material.dart';
 
-class DiceRoller extends StatefulWidget {
-  const DiceRoller({super.key});
-  @override
-  State<DiceRoller> createState() {
-    return _DiceRollerState();
-  }
-}
+class DiceRoller extends StatelessWidget {
+  const DiceRoller(this.randomNum, this.rollDice, this.playerText, {super.key});
 
-class _DiceRollerState extends State<DiceRoller> {
-  var activeImage = "assets/dice-2.png";
-  void rollDice() {
-    var diceNum = Random().nextInt(6) + 1;
-    setState(() {
-      activeImage = "assets/dice-$diceNum.png";
-    });
-  }
+  final int randomNum;
+  final void Function() rollDice;
+  final String playerText;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        StyledText(playerText),
+        const SizedBox(
+          height: 20,
+        ),
         Image.asset(
-          activeImage,
-          width: 200,
+          "assets/dice-$randomNum.png",
+          width: 160,
         ),
         const SizedBox(
           height: 20,
