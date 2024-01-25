@@ -11,9 +11,20 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreen extends State<QuestionsScreen> {
+  var currQuestionIndex = 0;
+  void changeQuestion() {
+    setState(() {
+      if (currQuestionIndex == 5) {
+        currQuestionIndex = 5;
+      } else {
+        currQuestionIndex += 1;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currQuestionIndex];
 
     return SizedBox(
       // For giving as much width as available
@@ -37,7 +48,7 @@ class _QuestionsScreen extends State<QuestionsScreen> {
             ),
             ...currentQuestion.getShuffledAnswers().map(
               (answer) {
-                return AnswerButton(() {}, answer);
+                return AnswerButton(changeQuestion, answer);
               },
             ),
           ],
