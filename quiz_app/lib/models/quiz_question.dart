@@ -4,4 +4,11 @@ class QuizQuestion {
   final List<String> answers;
 
   const QuizQuestion(this.text, this.answers);
+
+  List<String> getShuffledAnswers() {
+    final shuffledList = List.of(
+        answers); // create and return a copy of list which is passed in parameter
+    shuffledList.shuffle(); // shuffle the original list
+    return shuffledList;
+  }
 }
