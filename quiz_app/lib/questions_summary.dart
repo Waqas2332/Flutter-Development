@@ -13,17 +13,19 @@ class QuestionsSummary extends StatelessWidget {
             Text(
               ((data["question_index"] as int) + 1).toString(), // type casting
             ),
-            Column(
-              children: [
-                Text(
-                  data["question"].toString(),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(data["choosen_answer"] as String),
-                Text(data["correct_answer"] as String),
-              ],
+            Expanded(
+              child: Column(
+                children: [
+                  Text(
+                    data["question"].toString(),
+                  ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  Text(data["choosen_answer"] as String),
+                  Text(data["correct_answer"] as String),
+                ],
+              ),
             ),
           ],
         );
