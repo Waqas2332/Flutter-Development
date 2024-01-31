@@ -7,3 +7,7 @@
 ## For displaying lists within lists
 
 - Use Expanded Widget
+
+## For displaying formatted dates
+
+- flutter pub add intl
