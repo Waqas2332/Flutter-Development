@@ -1,3 +1,4 @@
+import 'package:expense_tracker/model/expense.dart';
 import 'package:flutter/material.dart';
 
 class NewExpense extends StatefulWidget {
@@ -13,16 +14,21 @@ class _NewExpense extends State<NewExpense> {
   // Controllers are built it for handling text fields but it has to close by using dispose method otherwise it will keep taking space in memory and it can cause memory overflow and app crash
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
+  DateTime? _selectedDate;
 
-  void _presentDatePicker() {
+  void _presentDatePicker() async {
     final now = DateTime.now();
     final firstDate = DateTime(now.year - 1, now.month, now.day);
 
-    showDatePicker(
+    final pickedDate = await showDatePicker(
         context: context,
         initialDate: now,
         firstDate: firstDate,
         lastDate: now);
+
+    setState(() {
+      _selectedDate = pickedDate;
+    });
   }
 
   @override
@@ -57,15 +63,16 @@ class _NewExpense extends State<NewExpense> {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 16,
-              ),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("Selected Date"),
+                    Text(
+                      _selectedDate == null
+                          ? "No Date Selected"
+                          : formatter.format(_selectedDate!),
+                    ),
                     IconButton(
                       onPressed: _presentDatePicker,
                       icon: const Icon(Icons.calendar_month),
