@@ -11,6 +11,24 @@ void main() {
       appBarTheme: const AppBarTheme().copyWith(
           backgroundColor: colorScheme.onPrimaryContainer,
           foregroundColor: colorScheme.primaryContainer),
+      cardTheme: const CardTheme().copyWith(
+        color: colorScheme.secondaryContainer,
+        margin: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 8,
+        ),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: colorScheme.primaryContainer,
+        ),
+      ),
+      textTheme: const TextTheme().copyWith(
+        titleLarge: TextStyle(
+            fontWeight: FontWeight.normal,
+            color: colorScheme.onSecondaryContainer,
+            fontSize: 14),
+      ),
     ),
     home: const Expenses(),
   ));
