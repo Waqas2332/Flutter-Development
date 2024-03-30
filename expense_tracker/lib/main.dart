@@ -25,9 +25,10 @@ void main() {
       ),
       textTheme: const TextTheme().copyWith(
         titleLarge: TextStyle(
-            fontWeight: FontWeight.normal,
-            color: colorScheme.onSecondaryContainer,
-            fontSize: 14),
+          fontWeight: FontWeight.bold,
+          color: colorScheme.onSecondaryContainer,
+          fontSize: 17,
+        ),
       ),
     ),
     home: const Expenses(),
